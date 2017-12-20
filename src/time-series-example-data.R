@@ -23,8 +23,8 @@ set.seed(1) #set random seed
 library(forecast)
 library(R.utils)
 #Load functions for Gini and NOIS calculations
-source("gini.R")
-source("NOIS.R")
+source("src/gini.R")
+source("src/NOIS.R")
 
 ### Simulate some data, we will use the same data as the other examples ###
 

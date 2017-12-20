@@ -28,9 +28,9 @@ library(truncnorm)
 
 
 #Load functions for Gini and NOIS calculations
-source("gini.R")
+source("src/gini.R")
 #source("gini.r")
-source("NOIS.R")
+source("src/NOIS.R")
 
 ### Simulate some data ###
 
@@ -64,7 +64,7 @@ sim_dat <- data.frame(matrix(0,nt*ns,11))
 colnames(sim_dat) <- c("RAW1_mn","P_mn","ET","HeatArea","LndVal","Days","AW_percent_month_mean","FPE","GreenSpace","Bldval","Act_max")
 
 #Covariates
-load("params.RData")
+load("dataparams.RData")
 
 for(var in colnames(sim_dat)){
   sim_dat[,var] <- rtruncnorm(ns*nt, a=0, mean = (params_lm[params_lm$vars == var, "int"] + params_lm[params_lm$vars == var, "mean"]*10*tmp.dat$Y), sd = params_lm[params_lm$vars == var,"sd"]/2)

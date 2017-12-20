@@ -62,7 +62,7 @@ dist_T.new = as.matrix(dist(unique(dat.test$times)))
 dist_T.on = as.matrix(rdist(unique(dat.train$times),unique(dat.test$times)))
 dist_T.old = as.matrix(dist(unique(dat.train$times))) #correlation matrices, for prediction
 
-sourceCpp('ST-model.cpp') #load C++ code
+sourceCpp('src/ST-model.cpp') #load C++ code
 
 Xlin = model.matrix(as.formula(paste("~ (", 
                                      paste(names(dat.train)[grep('X',names(dat.train))], 
