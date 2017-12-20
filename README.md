@@ -18,6 +18,8 @@ Once the prerequisites above have been installed, you simply need to copy the fi
 
 ### Running the code
 
+The following describes the four main scripts, located in [src](src/), for fitting the models used in the EMS paper:
+
 | File | Description |
 | --- | --- |
 | `GAM-model-example-data.R` | Simulates data and fits the GAM model |
@@ -29,7 +31,7 @@ The R script [`ST-model-example-data.R`](src/ST-model-example-data.R) simulates 
 
 Other scripts include the C++ code [`ST-model.cpp`](src/ST-model.cpp) which provides the functions necessary for training the space-time model and using the model to make forecasts, and the [`gini.R`](src/gini.R) and [`NOIS.R`](src/NOIS.R) scripts with provide functions for computing the GINI and NOIS validation metrics. 
 
-This code should be able to be run as-is, either line-by-line or all at once. For example, calling `source("src/ST-model-example-data.R")` will simulate data and fit and validate the ST model on the simulated data, and show some traceplots of the MCMC chains as well as observed vs. predicted values from the ST model on a left-out data set.
+This code is self-contained and should be able to be run as-is, either line-by-line or all at once. For example, calling `source("src/ST-model-example-data.R")` will simulate data and fit and validate the ST model on the simulated data, and show some traceplots of the MCMC chains as well as observed vs. predicted values from the ST model on a left-out data set.
 
 ## Authors
 
